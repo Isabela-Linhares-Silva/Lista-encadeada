@@ -15,6 +15,8 @@ int lst_vazia(LLista lst_atual);
 LLista lst_busca(LLista lst_atual,int num);
 LLista lst_retira(LLista lst_atual,int valor);
 void lst_libera(LLista lst_atual);
+LLista lst_max(LLista lst_atual);
+LLista lst_crescente(LLista lst_atual);
 
 int main()
 {
@@ -103,4 +105,27 @@ void lst_libera(LLista lst_atual){
         free(p);
         p= t;
     }
+}
+
+LLista lst_max(LLista lst_atual){
+    LLista maior = lst_atual;
+
+    if(lst_atual!= lst_vazia(lst_atual)){
+        LLista p= lst_atual;
+        while (p!=NULL)
+        {
+            if(maior->info < p->info){
+                maior=p;
+            }
+            p= p->prox;
+        }
+        return maior;
+    }
+    return NULL;
+}
+
+LLista lst_crescente(LLista lst_atual){
+    LLista lst_ordena = lst_cria();
+    while()
+
 }
